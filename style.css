@@ -10,12 +10,13 @@
 #frontpage {
   display: inline;
   text-align: center;
+  margin-left: 1000px;
+  font-family: 'Oswald', sans-serif;
 }
 cursor{
   width: 50%;
   height: 50%;
-  margin-top: 20px;
-  margin-left: -100px;
+
 }
 
 ul {
