@@ -13,10 +13,17 @@
   margin-left: 1000px;
   font-family: 'Oswald', sans-serif;
 }
+#resumeword {
+  text-align: center;
+  color: black;
+  font-size: 100px;
+  position: relative;
+  top: -240px;
+  font-family: 'Oswald', sans-serif;
+}
 cursor{
   width: 50%;
   height: 50%;
-
 }
 
 ul {
