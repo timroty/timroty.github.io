@@ -9,7 +9,6 @@
 #frontpage {
   display: inline;
   text-align: center;
-  margin-left: 1000px;
   font-family: 'Oswald', sans-serif;
 }
 #resumeword {
@@ -43,7 +42,7 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    
+
 }
 
 li a:hover {
