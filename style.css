@@ -11,9 +11,7 @@ cursor{
   width: 50%;
   height: 50%;
 }
-frontpage {
-  display: inline;
-}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -33,6 +31,7 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    width: 100%;
 }
 
 li a:hover {
