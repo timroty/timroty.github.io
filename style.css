@@ -3,7 +3,7 @@
 #frontname {
   vertical-align: center;
   margin-top: 200px;
-  font-size: 200;
+  font-size: 200px;
 
 }
 #frontpage {
@@ -21,7 +21,8 @@
   font-family: 'Oswald', sans-serif;
 }
 cursor{
-max-height: 75px;
+width: 50%;
+height: 50%;
 }
 
 ul {
