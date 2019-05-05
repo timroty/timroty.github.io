@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <html>
@@ -15,12 +16,12 @@
 
 <div id="header">
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-sm-6">
     <div id="name">
-    <h1 style="color: white; font-size: 170px; font-weight: bold;"> Tim <br> Roty </h1>
+    <h1 style="color: white; font-size: 135px; font-weight: bold;"> Tim <br> Roty </h1>
   </div>
   </div>
-  <div class="col-md-6">
+  <div class="col-sm-6">
     <div id="headpic">
     <img id="headshot" src="./images/headshot.jpg">
   </div>
@@ -34,7 +35,7 @@
 </div>
 <div class="col-lg-8">
   <div id="attributes">
-<h2 style="color: white; font-weight: bold; font-size: 50px;"> Student ○ Developer ○ Innovator</h2>
+<h2 style="color: white; font-weight: bold; font-size: 40px;"> Student ○ Developer ○ Innovator</h2>
 </div>
 </div>
 
@@ -45,7 +46,7 @@
   <div class = "col-md-12">
   <div id="downloadresume">
     <a href="./images/Github Resume.pdf" download>
-  <h2 id="resumeword" style="font-size: 50px;"> Resume </h2>
+  <h2 id="resumeword" style="font-size: 40px;"> Resume </h2>
 </a>
 </div>
 
@@ -54,9 +55,7 @@
 <div id="gradient"></div>
 </div>
 
-
-
-<div id="aboutMe">
+<div id="aboutMeHeader">
 <div class="row">
   <div class = "col-md-12">
     <h1 id ="AMText"> About Me </h1>
@@ -64,31 +63,75 @@
 </div>
 </div>
 
+<div id="aboutMe">
+  <div id="box">
+<div class = "row" style = "background-color: #d8d8d8; border-radius: 25px;">
+    <div class = "col-sm-4">
+  <i class="fas fa-user-graduate"></i>
+</div>
+  <div class = "col-sm-8">
+    <h1 style = "font-size: 30px; "> Freshman at the University of Nebraska-Lincoln studying Software Engineering and Buisness Management.</h1>
+  </div>
+</div>
+</div>
+
+
+<div id="box">
+<div class = "row" style = "background-color: #d8d8d8; border-radius: 25px;">
+  <div class = "col-sm-4">
+<i class="fas fa-football-ball" style="color: brown;"></i>
+</div>
+<div class = "col-sm-8">
+  <h1 style = "font-size: 30px; "> Love to play and watch sports! Being from KC, of course I cheer for my home teams #RaisedRoyal #CheifsKingdom</h1>
+</div>
+</div>
+</div>
+
+
+
+<div id="box" style="padding-bottom:10vh;">
+<div class = "row" style = "background-color: #d8d8d8; border-radius: 25px;">
+  <div class = "col-sm-4">
+<i class="fas fa-microphone-alt"style="color: black;"></i>
+</div>
+<div class = "col-sm-8">
+  <h1 style = "font-size: 30px; "> I have a podcast where I interview and get to know my friends a little better. Check it out at: anchor.fm/rotyradio</h1>
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<div id="aboutMeHeader">
+<div class="row">
+  <div class = "col-md-12">
+    <h1 id ="AMText"> Contact </h1>
+  </div>
+</div>
+</div>
+
+
+
 <div id="contact">
+<div class="row" style = "background-color: #d8d8d8; border-radius: 25px;">
+  <div class = "col-xs-4">
+      <a href="mailto: timroty13@gmail.com"> <i class="fas fa-envelope" style="color: white;"></i></a>
 
-  <h2 class="headings"> Contact </h2>
-  <p id="contactme"> If you would like to get in contact, great! Select an icon to find me on the following platforms:</p>
-  <div class="contacts">
-  <h6 id="email">
-  <a href="mailto:timroty13@gmail.com">
-    <img id="emaillogo" src="./images/mailLogo.png">
-  </a>
-    timroty13@gmail.com </h6>
+  </div>
+  <div class = "col-xs-4">
+      <a href="https://github.com/timroty"><i class="fab fa-github-square" style="color: black;"></i></a>
+  </div>
+  <div class = "col-xs-4">
+  <a href="https://www.linkedin.com/in/tim-roty-62296516a/">  <i class="fab fa-linkedin"  style="color: darkblue;"></i></a>
+  </div>
 
-  <h6 id="linkedin">
-      <a href="https://www.linkedin.com/in/tim-roty-62296516a/">
-    <img id="linkedinlogo" src="./images/linkedin.png" >
-  </a>
-    Tim Roty </h6>
-
-  <h6 id="github">
-    <a href="https://github.com/timroty">
-    <img id="githublogo" src="./images/github.png" >
-  </a>
-    timroty </h6>
 </div>
 </div>
 
-<p id="endNote"> Coded from scratch, becuase templates are boring. </p>
+
+
 </body>
 </html>
