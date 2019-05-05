@@ -68,11 +68,10 @@ height: auto;
   background-color: #009999;
   height: auto;
 }
-.fas, .fab, .fa-user-graduate{
+.fas, .fab{
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: 20vh;
-  color: #003366;
 }
 #box{
   padding-top:10vh;
