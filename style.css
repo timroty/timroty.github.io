@@ -1,231 +1,89 @@
 
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 html{
-  width: 100%;
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
-  overflow-x: hidden;
+ height: 100%;
+ width: 100%;
 }
- body{
+body{
  width: 100%;
  height: 100%;
- background-color: #f9f9f9;
- margin: 0px;
- padding: 0px;
- overflow-x: hidden;
 }
-
-.header {
-  margin-top: 0px;
-  margin-right: 0px;
-  padding-top: 0px;
+#header{
+background-color: rgb(0,25,50);
+height: auto;
 }
-#header {
-  background-image: url("./images/header.jpeg");
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size:cover;
-  background-attachment: fixed;
-  margin-top: 0px;
-  margin-right: 0px;
+#name{
+  text-align: center;
+  margin-top: 10vh;
+  text-shadow: 5px 5px 1px rgb(102,178,255);
 }
-
-#name {
-margin-top: 0px;
-padding-top: 40vh;
-padding-left: 5vh;
-font-size:500%;
-color: white;
-text-shadow: 1px 1px 2px darkGray;
+#headpic{
+  display: flex;
+  justify-content: center;
+  margin-top: 10vh;
 }
-
-#fontawesome{
-  color: white;
-  padding-left: 8vh;
-  font-size: 350%;
-}
-#fontLink{
-  color: white;
-}
-
-#Description {
-  color: white;
-  padding-left: 8vh;
-  font-size:150%;
-  text-shadow: 1px 1px 2px darkGray;
-  font-family: 'Roboto', sans-serif;
-}
-#about{
-  margin-top: 10%;
-  padding-left: 10%;
-  padding-right: 10%;
-
-}
-#aboutText{
-  margin-top: 5%;
-  vertical-align: middle;
-
-}
-#aboutTitle {
-  text-align: left;
-  color: black;
-  font-family: 'Poppins', sans-serif;
- font-size:300%;
- font-weight: bold;
-}
-
-#aboutBio {
- text-align: left;
- color: #707070;
- font-family: 'Poppins', sans-serif;
- font-size: 150%;
-}
-
 #headshot {
-  height: 70vh;
+  border-radius: 50%;
+  border-width:5px;
+  border-style:solid;
+  border-color:white;
+  margin-left: auto;
+  margin-right: auto;
+  height: 350px;
+
 }
-
-
-#contact{
-background-image: linear-gradient(to right, #42f474, #41aff4);
-width: 30%;
-margin-top: 10%;
-border-radius: 20px;
-text-align: center;
-}
-
-#button{
-color: white;
-font-size: 150%;
-font-family: 'Poppins', sans-serif;
-}
-
-#concerts {
-text-align: center;
-margin-top: 20vh;
-}
-
-#concertsTitle{
+#attributes{
   text-align: center;
-  color: black;
-  font-family: 'Poppins', sans-serif;
- font-size:300%;
- font-weight: bold;
+  height: 15vh;
 }
-
-responsiveCal {
-position: relative;
-padding-bottom: 75%;
-height:100%;
-overflow: hidden;
+#gradient{
+  background-color: rgb(0,25,50);
+  background-image: linear-gradient(rgb(0,25,50), rgb(0,25,50));
+  height: 20px;
 }
-
-.responsiveCal iframe {
-position: relative;
-top:0;
-left: 0;
-width: 70vw;
-height: 550px;
-}
-
-#myWork{
-  background-color: #212223;
-  height: auto;
-  margin-top:6%;
-}
-
-#workheader{
-  margin-top: 4%;
+#resumeword {
+  text-align: center;
   color: white;
-  font-family: 'Poppins', sans-serif;
-  font-size: 350%;
-  font-weight: bold;
-  text-align: center;
-
-}
-
-#soundcloud{
-  background-color: #f47922;
-  color: black;
-  font-weight: bold;
-  font-family: 'Poppins', sans-serif;
-  font-size: 150%;
-  margin-bottom: 1%;
-  text-align: center;
+  font-size: 40px;
+  position: relative;
   text-decoration: none;
-
-}
-
-
-#videos{
-text-align: center;
-}
-
-responsiveVideo {
-position:static;
-overflow: hidden;
-align-content: center;
-}
-
-.responsiveVideo iframe {
-align-self: center;
-padding-bottom: 2%;
-top:0;
-left: 0;
-width: 500px;
-height: 315px;
-}
-
-#card{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  height: auto;
-  width: 38vh;
-  background-color: white;
-  text-align: center;
-  box-shadow: 1px 1px 10px #888888;
-  margin-bottom: 10%;
-}
-#song{
-  height: 38vh;
-}
-#SongName{
-  font-family: 'Poppins', sans-serif;
-  font-size: 220%;
-  color: gray;
-  padding-bottom: 15px;
   font-weight: bold;
+  margin-top: 10vh;
+  height: 15vh;
 }
-
-#contactPage{
+#aboutMeHeader{
+  background-image: url("./images/AMB.001.jpeg");
   height: auto;
-  width: 50vw;
-  margin-left: auto;
-  margin-right: auto;
+}
+#AMText{
+  font-size: 60px;
+  text-align: center;
+  color: white;
+   text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray);
+  margin-top: 7%;
+  margin-bottom: 7%;
+}
+#aboutMe{
+  background-color: #009999;
+  height: auto;
+}
+.fas, .fab{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 18vh;
+}
+#box{
+  padding-top:10vh;
+  padding-left: 10vh;
+  padding-right: 10vh;
   text-align: center;
 }
-#contactTitle {
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold;
+#contact {
+  padding-top: 5vh;
+  padding-left: 5vh;
+  padding-right: 5vh;
+  padding-bottom: 5vh;
+  background-color: #009999;
   text-align: center;
-  margin-top: 5%;
-  font-size: 300%;
-}
-
-#sociallinks{
-  margin-right: 20vh;
-  margin-left: 20vh;
-  text-align: center;
-  font-size: 13vh;
-}
-
-#bottomliner {
-  background-color: #212223;
-  font-family: 'Poppins', sans-serif;
-  width: auto;
-  height: 25px;
-  text-align: center;
-  align-items: center;
 }
