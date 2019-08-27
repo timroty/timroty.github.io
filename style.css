@@ -1,89 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nothing+You+Could+Do&display=swap');
 
-@import url('https://fonts.googleapis.com/css?family=Oswald');
-@import url('https://fonts.googleapis.com/css?family=Roboto');
 html{
  height: 100%;
  width: 100%;
+ margin: 0px;
+  padding: 0px;
+  overflow-x:hidden;
 }
 body{
  width: 100%;
  height: 100%;
+ background-color: #ededed;
+ margin: 0px;
+ padding: 0px;
+ overflow-x:hidden;
 }
-#header{
-background-color: rgb(0,25,50);
-height: auto;
-}
-#name{
+
+.Header{
+  background-image: url("./images/wavy.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: static;
+  height: 20em;
   text-align: center;
-  margin-top: 10vh;
-  text-shadow: 5px 5px 1px rgb(102,178,255);
-}
-#headpic{
-  display: flex;
-  justify-content: center;
-  margin-top: 10vh;
-}
-#headshot {
-  border-radius: 50%;
-  border-width:5px;
-  border-style:solid;
-  border-color:white;
-  margin-left: auto;
-  margin-right: auto;
-  height: 350px;
+  margin-left: 0;
+  margin-right: 0;
+  background-attachment: fixed;
+  background-position:center;
 
 }
-#attributes{
-  text-align: center;
-  height: 15vh;
+.Headshot{
+  height: 22em;
+  width: 22em;
+  border-radius: 50%;
+  margin-top:10em;
+  border-width: thick;
+  border: .50em solid #ededed;
+  margin-left: 0;
+  margin-right: 0;
 }
-#gradient{
-  background-color: rgb(0,25,50);
-  background-image: linear-gradient(rgb(0,25,50), rgb(0,25,50));
-  height: 20px;
-}
-#resumeword {
+
+
+#Name {
+  margin-top: 14em;
+  margin-bottom: 5em;
+  color: black;
   text-align: center;
-  color: white;
-  font-size: 40px;
-  position: relative;
-  text-decoration: none;
+}
+
+#NameText{
+  font-size: 8em;
+  font-family: 'Nothing You Could Do', cursive;
   font-weight: bold;
-  margin-top: 10vh;
-  height: 15vh;
 }
-#aboutMeHeader{
-  background-image: url("./images/AMB.001.jpeg");
-  height: auto;
-}
-#AMText{
-  font-size: 60px;
+#Resume{
   text-align: center;
-  color: white;
-   text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray);
-  margin-top: 7%;
-  margin-bottom: 7%;
+  margin-bottom: 100px;
 }
-#aboutMe{
-  background-color: #009999;
-  height: auto;
+.Card{
+  margin-left: .5em;
+  margin-right: .5em;
+  margin-bottom: 1.2em;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 3px 8px 0 rgba(0, 0, 0, 0.09);
+
+  min-height: 8em;
+  min-width: 22em;
+  max-width: 50em;
 }
-.fas, .fab{
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-size: 18vh;
+.CardTitle{
+  font-size: 1.8em;
+  padding-left: .3em;
+  padding-top: .3em;
+  padding-bottom: .2em;
 }
-#box{
-  padding-top:10vh;
-  padding-left: 10vh;
-  padding-right: 10vh;
-  text-align: center;
+.CardDescription{
+  font-size: 1.3em;
+  padding-left: 1em;
+  padding-bottom: .2em;
+  padding-right: .4em;
 }
-#contact {
-  padding-top: 5vh;
-  padding-left: 5vh;
-  padding-right: 5vh;
-  padding-bottom: 5vh;
-  background-color: #009999;
+.CardBullet{
+  font-size: 1.2em;
+}
+.CardSpacer{
+  min-height: .8em;
+}
+
+.BottomText{
+  margin-top: 3em;
   text-align: center;
 }
