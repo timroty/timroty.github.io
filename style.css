@@ -6,7 +6,8 @@ html{
  width: 100%;
  margin: 0px;
  padding: 0px;
-
+ -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }
 body{
  width: 100%;
@@ -14,12 +15,8 @@ body{
  background-color: #ededed;
  margin: 0px;
  padding: 0px;
-
-}
-
-* {
-    -webkit-overflow-scrolling: touch;
-     scroll-behavior: smooth;
+ -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }
 
 .Header{
