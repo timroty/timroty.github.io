@@ -19,6 +19,10 @@ body{
  scroll-behavior: smooth;
 }
 
+* {
+    -webkit-overflow-scrolling: touch;
+}
+
 .Header{
   background-image: url("./images/wavy.png");
   height: 100%;
