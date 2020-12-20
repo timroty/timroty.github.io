@@ -1,116 +1,230 @@
-<!DOCTYPE html>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="style.css">
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<html>
- <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
-  -->
+<!doctype html>
+<html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Tim Roty</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <title>Tim Roty</title>
 </head>
 <body>
 
-<div class = "Header">
-    <img class ="Headshot" src="images/IMG_6166.JPG">
+<div class="container navbar-main">
+  <a href="#experience" class="navbar-element">Experience</a>
+  <a href="#skills" class="navbar-element">Skills</a>
+  <a href="#about" class="navbar-element">About</a>
+  <a href="#contact" class="navbar-element">Contact</a>
 </div>
 
-  <div id = "Name">
-    <h1 id ="NameText"> Tim Roty </h1>
-    <p id ="SubNameText"> Software Engineer</p>
-  </div>
+<div class="container title">
+  <div class="row">
+    <div class="col-lg order-2">
+      <div class="title-text">
+        Hey, I'm <span class="light-text">Tim Roty</span>, a Student and Software Engineer.
+      </div>
+      <div class="subtitle-text">
+        I'm Tim, a student at the Univeristy of Nebraska-Lincoln studying studying Software Engineering, Mathematics,
+        and Buisness Managment. I'm expereinced in full stack software development.
+      </div>
+      <div class="title-buttons">
+        <a class="dark-button" href="#contact" style="margin-right: 5px;">Contact</a>
+        <a class="dark-button" href = "resources/PublicFall2020Resume.pdf" target="_blank" style="margin-left: 5px;">Resume</a>
+    </div>
+    </div>
+    <div class="col-lg order-1">
+      <div class="title-photo-bg">
+        <img class="title-photo" src="resources/IMG_1010.PNG">
+      </div>
+    </div>
+    </div>
+</div>
 
-<div class="container">
-
-  <div class="row" >
-    <div class="col-md-4">
-      <div class = "sectionTitle">Personal</div>
-      <div class = "Card">
-        <h4 class = "CardTitle" style="color:#ff6b6b">About Me </h4>
-        <h6 class = "CardDescription"> <span class = "CardBullet" style="color:#ff6b6b;">&#8226; </span>Student at the University of Nebraska-Lincoln</h6>
-        <h6 class = "CardDescription"> <span class = "CardBullet" style="color:#ff6b6b;">&#8226; </span>Software Engineering Major</h6>
-        <h6 class = "CardDescription"> <span class = "CardBullet" style="color:#ff6b6b;">&#8226; </span>Buisness Management and Mathematics Minor</h6>
-        <h6 class = "CardDescription"> <span class = "CardBullet" style="color:#ff6b6b;">&#8226; </span>Kansas City Born and Raised</h6>
-        <h6 class = "CardDescription"> <span class = "CardBullet" style="color:#ff6b6b;">&#8226; </span>Cheifs, Royals, Sporting, and Husker Fan</h6>
-        <div class = CardSpacer></div>
+<div id="experience" class="container experience">
+  <div style="text-align: center;">
+    <div class="mini-header">What I've Done</div>
+    <div class="main-header">My Experience</div>
+  </div>
+  <div class="row">
+    <div class="col-md" style="text-align: center;">
+      <div class="experience-square opendorse-square">
+        <i class="fas fa-football-ball opendorse-icon"></i>
       </div>
-      <div class = "Card">
-        <h4 class = "CardTitle" style="color:#76dbb8"> Resume </h4>
-        <h6 class = "CardDescription"> <span class = "CardBullet" style="color:#76dbb8;">&#8226; </span>Go ahead and take a resume, they're free!</h6>
-        <h6 class = "CardDescription"> <span class = "CardBullet" style="color:#76dbb8;">&#8226; </span><a href="./images/2020GithubResume.pdf" target="_blank">Download Resume</a></h6>
-        <div class = CardSpacer></div>
+      <div class="experience-header">
+        <div class="experience-title">Opendorse</div>
+        <div class="experience-subtitle">Software Engineer Intern</div>
+        <div class="experience-timeframe">May 2020-Aug 2020</div>
       </div>
-      <div class = "Card">
-        <h4 class = "CardTitle" style="color:#225e0c">Skills </h4>
-        <h6 class = "CardDescription"> <span class = "CardBullet" style="color:#225e0c;">&#8226; </span>HTML/CSS</h6>
-        <h6 class = "CardDescription"> <span class = "CardBullet" style="color:#225e0c;">&#8226; </span>JAVA</h6>
-        <h6 class = "CardDescription"> <span class = "CardBullet" style="color:#225e0c;">&#8226; </span>C#/.Net</h6>
-        <h6 class = "CardDescription"> <span class = "CardBullet" style="color:#225e0c;">&#8226; </span>JavaScript</h6>
-        <h6 class = "CardDescription"> <span class = "CardBullet" style="color:#225e0c;">&#8226; </span>Git</h6>
-        <h6 class = "CardDescription"> <span class = "CardBullet" style="color:#225e0c;">&#8226; </span>SQL</h6>
-        <div class = CardSpacer></div>
+      <div class="experience-about-section">
+        <div class="experience-about">Created an assessment for the Student-Athletes of over 8 Division 1 NCAA schools to gauge social media engagement and performance using C#, .NET Core, HTML/CSS, and JavaScript. </div>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class = "sectionTitle">Platforms</div>
-      <div class = "Card">
-        <h4 class = "CardTitle" style="color:black">Github </h4>
-        <h6 class = "CardDescription"> <span class = "CardBullet" style="color:black;">&#8226; </span> Check out my projects on GitHub</h6>
-        <h6 class = "CardDescription"> <span class = "CardBullet" style="color:black;">&#8226; </span>  <a href="https://github.com/timroty" style="color: black;" target="_blank"><i class="fab fa-github" style="font-size: 3em; text-align: center;"></i></a></h6>
-        <div class = CardSpacer></div>
+    <div class="col-md" style="text-align: center;">
+      <div class="experience-square spreetail-square">
+        <i class="fas fa-box-open spreetail-icon"></i>
       </div>
-      <div class = "Card">
-        <h4 class = "CardTitle" style="color:#70abdb">LinkedIn </h4>
-          <h6 class = "CardDescription"> <span class = "CardBullet" style="color:#70abdb;">&#8226; </span> Connect with me on LinkedIn</h6>
-          <h6 class = "CardDescription"> <span class = "CardBullet" style="color:#70abdb;">&#8226; </span> <a href="https://www.linkedin.com/in/tim-roty-62296516a/" style="color: #70abdb;" target="_blank"><i class="fab fa-linkedin" style="font-size: 3em; text-align: center;"></i></a></h6>
-        <div class = CardSpacer></div>
+      <div class="experience-header">
+        <div class="experience-title">Spreetail</div>
+        <div class="experience-subtitle">Software Engineer Intern</div>
+        <div class="experience-timeframe">May 2019-Aug 2019</div>
       </div>
-      <div class = "Card">
-        <h4 class = "CardTitle" style="color:#354fb7">Medium </h4>
-          <h6 class = "CardDescription"> <span class = "CardBullet" style="color:#354fb7;">&#8226; </span> Check out my work on Medium</h6>
-          <h6 class = "CardDescription"> <span class = "CardBullet" style="color:#354fb7;">&#8226; </span> <a href="https://medium.com/@timroty13" style="color: #354fb7;" target="_blank"><i class="fab fa-medium" style="font-size: 3em; text-align: center;"></i></a></h6>
-        <div class = CardSpacer></div>
-      </div>
-      <div class = "Card">
-        <h4 class = "CardTitle" style="color:#bf70db"> Email </h4>
-          <h6 class = "CardDescription"> <span class = "CardBullet" style="color:#bf70db;">&#8226; </span>Email me at the following address:</h6>
-          <h6 class = "CardDescription"> <span class = "CardBullet" style="color:#bf70db;">&#8226; </span>timroty13@gmail.com</h6>
-          <div class = CardSpacer></div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class = "sectionTitle">Experience</div>
-      <div class = "Card">
-        <h4 class = "CardTitle" style="color:#136b65"> Spreetail </h4>
-        <h6 class = "CardDescription"> <span class = "CardBullet" style="color:#136b65;">&#8226; </span>Summer 2019</h6>
-        <h6 class = "CardDescription"> <span class = "CardBullet" style="color:#136b65;">&#8226; </span>Worked on the Customer Experience software team as a backend engineer creating internal tools used daily by Spreetail's customer service department.</h6>
-        <h6 class = "CardDescription"> <span class = "CardBullet" style="color:#136b65;">&#8226; </span>Helped to improve call and email response times by refactoring database calls and adding new customer response features.</h6>
-        <div class = CardSpacer></div>
-      </div>
-      <div class = "Card">
-        <h4 class = "CardTitle" style="color:#5ee076"> Opendorse </h4>
-        <h6 class = "CardDescription"> <span class = "CardBullet" style="color:#5ee076;">&#8226; </span> Incoming software developement intern at Opendorse</h6>
-        <div class = CardSpacer></div>
-        <div class = CardSpacer></div>
-      </div>
-      <div class = "Card">
-        <h4 class = "CardTitle" style="color:#D00000"> Teaching Assistant</h4>
-        <h6 class = "CardDescription"> <span class = "CardBullet" style="color:#D00000;">&#8226; </span> UNL Spring Semester 2020</h6>
-        <h6 class = "CardDescription"> <span class = "CardBullet" style="color:#D00000;">&#8226; </span> Assist in leading a cohort of 40 individuals through an Economics course focusing on Micro and Macroeconomics.</h6>
-        <h6 class = "CardDescription"> <span class = "CardBullet" style="color:#D00000;">&#8226; </span> Host weekly office hours to discuss course topics and problems.</h6>
-        <div class = CardSpacer></div>
+      <div class="experience-about-section">
+        <div class="experience-about">Worked on the Customer Experience software team as a backend engineer creating internal tools used daily by Spreetail's customer service department in C# and .Net.</div>
       </div>
     </div>
   </div>
-  </div>
-  <div class = "BottomText">
-    <h6 style="color:gray">Tim Roty 2019</h6>
+  <div class="row">
+    <div class="col-md" style="text-align: center;">
+      <div class="experience-square ta-square">
+        <i class="fas fa-chalkboard-teacher ta-icon"></i>
+      </div>
+      <div class="experience-header">
+        <div class="experience-title">UNL</div>
+        <div class="experience-subtitle">Teaching Assistant</div>
+        <div class="experience-timeframe">Jan 2020-May 2020</div>
+      </div>
+      <div class="experience-about-section">
+        <div class="experience-about">Assisted in leading a cohort of 40 individuals through an Economics course focusing on Micro and Macroeconomics. Mentored student groups through a semester-long industry analysis economics project.</div>
+      </div>
+    </div>
+    <div class="col-md" style="text-align: center;">
+      <div class="experience-square ds-square">
+        <i class="fas fa-graduation-cap ds-icon"></i>
+      </div>
+      <div class="experience-header">
+        <div class="experience-title">Design Studio</div>
+        <div class="experience-subtitle">Development Manager</div>
+        <div class="experience-timeframe">Aug 2020-Present</div>
+      </div>
+      <div class="experience-about-section">
+        <div class="experience-about">Building a fully featured developer portal to host API reference and more general documentation for Nelnet Velocity in GatsbyJS. Responsible for overseeing the technical implementation and responsibilities for the project and its 4 team members.</div>
+      </div>
+    </div>
   </div>
 </div>
+
+<div id="skills" class="container skills">
+  <div style="text-align: center;">
+    <div class="mini-header">What I Know</div>
+    <div class="main-header">My Skills</div>
+  </div>
+
+  <div class="row" style="text-align: center;">
+    <div class="col-sm">
+      <div class="skill-card">
+        <i class="fab fa-java skill-icon" style="color:red"></i>
+        <p class="skill-caption dark-text">Java</p>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="skill-card">
+        <i class="fab fa-js-square skill-icon" style="color:#f4c430"></i>
+        <p class="skill-caption dark-text">JavaScript</p>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="skill-card">
+        <p id = "csharp-skill" style="font-size: 55px;">C#</p>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="skill-card">
+        <p id="sql-skill" style="font-size: 45px; margin-top: 8px;">SQL</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="text-align: center;">
+    <div class="col-sm">
+      <div class="skill-card">
+        <i class="fab fa-css3-alt skill-icon" style="color:royalblue"></i>
+        <p class="skill-caption dark-text">CSS</p>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="skill-card">
+        <i class="fab fa-react skill-icon" style="color:dodgerblue"></i>
+        <p class="skill-caption dark-text">ReactJS</p>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="skill-card">
+        <i class="fab fa-angular skill-icon" style="color:red"></i>
+        <p class="skill-caption dark-text">Angular</p>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="skill-card">
+        <i id="git-skill" class="fab fa-git skill-icon"></i>
+        <p class="skill-caption dark-text">Git</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="about" class="container about">
+  <div style="text-align: center;">
+    <div class="mini-header">Who I Am</div>
+    <div class="main-header">About Me</div>
+    <div class="dark-text">Coming Soon</div>
+    
+    </div>
+
+</div>
+
+<div id="contact" class="container contact">
+  <div style="text-align: center;">
+    <div class="mini-header">Get In Touch</div>
+    <div class="main-header">Contact</div>
+
+
+    <div class="row" style="text-align: center;">
+      
+      <div class="col-sm">
+        
+        <div class="skill-card">
+        <a href="https://github.com/timroty" target="_blank" style="text-decoration: none;">
+          <i class="fab fa-github skill-icon" style="color: black;"></i>
+        </a>
+          <p class="skill-caption dark-text">GitHub</p>
+        </div>
+        
+      </div>
+      <div class="col-sm">
+        <div class="skill-card">
+          <a href="https://linkedin.com/in/timroty" target="_blank" style="text-decoration: none;">
+            <i class="fab fa-linkedin-in skill-icon" style="color:navy"></i>
+          </a>
+          <p class="skill-caption dark-text">LinkedIn</p>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="skill-card">
+          <a href="mailto:timroty13@gmail.com" target="_blank" style="text-decoration: none;">
+            <i class="far fa-envelope skill-icon" style="color: black;"></i>
+          </a>
+          <p class="skill-caption dark-text">Email</p>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="skill-card">
+          <a href="https://medium.com/@timroty13" target="_blank" style="text-decoration: none;">
+            <i class="fab fa-medium-m skill-icon" id="medium-contact"></i>
+        </a>
+          <p class="skill-caption dark-text">Medium</p>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+<!-- <img src="http://ghchart.rshah.org/timroty" alt="Tim's Github Chart"> -->
 </body>
 </html>

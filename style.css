@@ -1,106 +1,246 @@
-@import url('https://fonts.googleapis.com/css?family=Rock+Salt&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Nothing+You+Could+Do&display=swap');
-
-html{
- height: 100%;
- width: 100%;
- margin: 0px;
- padding: 0px;
- -webkit-overflow-scrolling: touch;
-  scroll-behavior: smooth;
+:root {
+ --dark-font-color: #324376;
+ --light-blue-color: rgb(102, 199, 244);
+ --light-pink-color: rgba(179, 222, 226,.25);
+ --lavender-color: rgba(106, 102, 163,.2);
 }
+
 body{
  width: 100%;
  height: 100%;
- background-color: #ededed;
+ background-color: var(--main-bg-color);
  margin: 0px;
  padding: 0px;
  -webkit-overflow-scrolling: touch;
-  scroll-behavior: smooth;
+ scroll-behavior: smooth;
+ font-family: 'Rubik', sans-serif;
 }
 
-.Header{
-  background-image: url("./images/memorialStadium.jpg");
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: contain; 
-  position: static;
-  height: 25em;
+.dark-text{
+  color: var(--dark-font-color);
+}
+.light-text{
+  color: var(--light-blue-color);
+}
+
+.mini-header{
+  font-size: 12px;
+  color: var(--dark-font-color);
+  font-weight: 400;
+}
+.main-header{
+  font-size: 45px;
+  color: var(--dark-font-color);
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+/* Nav Bar */
+.navbar-main{
+  text-align: right;
+  margin-top: 15px;
+}
+.navbar-element{
+  display: inline-block;
+  margin-left: 30px;
+  font-weight: 500;
+  color: var(--dark-font-color);
+  font-size: 15px;
+}
+@media (max-width : 426px) {
+  .navbar-element{
+    margin-left: 15px;
+  }
+}
+
+/* Title */
+.title{
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  margin-top: 60px;
+}
+.title-text{
+  font-family: 'Rubik', sans-serif;
+  font-size: 55px;
+  font-weight: 500;
+  color: var(--dark-font-color);
+  line-height: 110%;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+
+.subtitle-text{
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  margin-top: 25px;
+}
+
+.title-buttons{
   text-align: center;
-  margin-left: 0;
-  margin-right: 0;
-  background-attachment: fixed;
-  background-position:top;
-
-}
-.Headshot{
-  height: 22em;
-  width: 22em;
-  border-radius: 50%;
-  margin-top: 15em;
-  border-width: thick;
-  border: .50em solid #ededed;
-  margin-left: 0;
-  margin-right: 0;
+  margin-top: 25px;
 }
 
-.sectionTitle{
-  font-size: 1.3em;
+.dark-button{
+  display:inline-block;
+  padding: 5px 20px;
+  background-color: var(--dark-font-color);
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
+}
+
+.title-photo-bg{
+  border-radius: 225px 0px 225px 225px;
+  max-height: 450px;
+  max-width: 450px;
+  background-color: rgba(102, 199, 244, .42);
+  overflow: hidden;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  margin-bottom: 10px;
+}
+.title-photo{
+  margin: auto;
+  display: block;
+  max-inline-size: 350px;
+}
+
+/* Experience */
+.experience{
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+.experience-square{
+  text-align: center;
+  width: 80px;
+  height: 80px;
+  padding-top: 20px;
+  border-radius: 15px;
+  display: inline-block;
+  margin-right: 15px;
+}
+.experience-header{
+  display: inline-block; 
+  text-align: left;
+  width: 200px;
+}
+.experience-title{
+  font-size: 30px;
+  color: var(--dark-font-color);
+  font-weight: 400;
+  line-height: 30px;
+}
+.experience-subtitle{
+  font-size: 15px;
+  color: var(--dark-font-color);
+  font-weight: 300;
+  line-height: 20px;
+}
+.experience-timeframe{
+  font-size: 12px;
+  color: var(--dark-font-color);
+  font-weight: 300;
+  line-height: 20px;
+}
+.experience-about{
+  font-size: 15px;
+  color: var(--dark-font-color);
+  font-weight: 300;
+  text-align: left;
+}
+.experience-about-section{
+  margin-top: 12px;
+  margin-bottom: 35px;
+  padding-left: 50px;
+  padding-right: 50px;
+} 
+
+.opendorse-square{
+  background-color: #d1ffd2;
+}
+.opendorse-icon{
+  font-size: 40px;
+  color: #519E8A;
+}
+
+.spreetail-square{
+  background-color: #9CEAEF;
   text-align: center;
 }
+.spreetail-icon{
+  font-size: 40px;
+  color: #42858C;
+  margin: auto;
+}
 
-
-#Name {
-  margin-top: 14em;
-  margin-bottom: 5em;
-  color: black;
+.ta-square{
+  background-color: #FF7B9C;
   text-align: center;
 }
-
-#NameText{
-  font-size: 8em;
-  font-family: 'Nothing You Could Do', cursive;
-  font-weight: bold;
+.ta-icon{
+  font-size: 40px;
+  color: #AB2346;
+  margin: auto;
 }
-#SubNameText{
-  font-size: 1em;
-}
-#Resume{
-  text-align: center;
-  margin-bottom: 100px;
-}
-.Card{
-  margin-left: .5em;
-  margin-right: .5em;
-  margin-bottom: 1.2em;
-  background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 3px 8px 0 rgba(0, 0, 0, 0.09);
-
-  min-height: 8em;
-  min-width: 22em;
-  max-width: 50em;
-}
-.CardTitle{
-  font-size: 1.8em;
-  padding-left: .3em;
-  padding-top: .3em;
-  padding-bottom: .2em;
-}
-.CardDescription{
-  font-size: 1.3em;
-  padding-left: 1em;
-  padding-bottom: .2em;
-  padding-right: .4em;
-}
-.CardBullet{
-  font-size: 1.2em;
-}
-.CardSpacer{
-  min-height: .8em;
-}
-
-.BottomText{
-  margin-top: 3em;
-  margin-bottom: 1em;
+.ds-square{
+  background-color: #dab4db;
   text-align: center;
 }
+.ds-icon{
+  font-size: 40px;
+  color: #ba40bd;
+  margin: auto;
+}
+
+/* Skills */
+.skills{
+  margin-bottom: 50px;
+}
+.skill-card{
+  text-align: center;
+  width: 90px;
+  height: 90px;
+  padding-top: 5px;
+  border-radius: 15px;
+  box-shadow: inset 0 0  0 2px rgb(255,255,255), 0.3em 0.3em 1em rgba(0,0,0,0.3);
+  display: inline-block;
+  margin-bottom: 25px;
+}
+.skill-icon{
+  margin: auto;
+  font-size: 65px;
+}
+.skill-caption{
+  margin-top: 5px;
+  font-size: 10px;
+}
+
+#csharp-skill{
+  background: linear-gradient(to right, #42f474, #41aff4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#sql-skill{
+  background: linear-gradient(to right, #ba40bd, #dab4db);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#git-skill{
+ 
+}
+
+/* About */
+.about{
+  margin-bottom:55px;
+}
+
+/* Contact */
+#medium-contact{
+  background: linear-gradient(to right, #42f474, #31b356);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
