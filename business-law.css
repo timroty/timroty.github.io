@@ -23,7 +23,37 @@ body {
     margin-top: .5rem;
     max-width: 850px;
 }
+@media (max-width : 426px) {
+    .title {
+        font-size: 3.2rem;
+    }
+  }
 
 hr.solid {
     border-top: 2px solid rgb(93, 93, 93);
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    font-family: 'Times New Roman';
+}
+
+.section-sub-heading {
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-family: 'Times New Roman';
+}
+
+.section-text {
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+}
+
+.section-photo {
+   text-align: center;
+}
+
+.photo {
+    max-width: 10rem;
 }
