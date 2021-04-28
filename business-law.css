@@ -15,7 +15,7 @@ body {
 }
 
 .title {
-    font-size: 4.2rem;
+    font-size: 4.1rem;
     font-weight: 600;
     line-height: 1.2;
     font-family: 'Times New Roman';
@@ -49,11 +49,16 @@ hr.solid {
     margin-bottom: 1.2rem;
     font-size: 1rem;
 }
+.section-link {
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+    text-align: center;
+}
 
 .section-photo {
    text-align: center;
 }
 
 .photo {
-    max-width: 10rem;
+    max-width: 24rem;
 }
