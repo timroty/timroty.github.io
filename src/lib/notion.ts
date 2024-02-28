@@ -26,6 +26,12 @@ export const getPostsDatabase = cache(async () => {
 export const getFavoritesDatabase = cache(async () => {
   const response = await notion.databases.query({
     database_id: favoritesDatabaseId,
+    sorts: [
+      {
+          property: "Date",
+          direction: "descending"
+      }
+    ]
   });
   return response.results;
 });

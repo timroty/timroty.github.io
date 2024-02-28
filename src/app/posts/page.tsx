@@ -8,7 +8,7 @@ export default async function Posts() {
     <>
       <NavigationBar></NavigationBar>
       <main>
-        <div className="container">
+        <div className="container max-w-screen-xl">
           <PageHeading>
             Posts
           </PageHeading>

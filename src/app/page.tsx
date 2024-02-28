@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <>
       <NavigationBar></NavigationBar>
-      <main className="container">
+      <main className="container max-w-screen-xl">
         <h1 className="text-5xl font-bold mt-32">
           Tim Roty
         </h1>
