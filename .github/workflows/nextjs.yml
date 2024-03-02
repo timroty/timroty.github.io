@@ -64,9 +64,7 @@ jobs:
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_POSTS_DATABASE_ID: ${{ secrets.NOTION_POSTS_DATABASE_ID }}
-          NOTION_FAVORITES_DATABASE_ID: ${{ secrets.NOTION_FAVORITES_DATABASE_ID }}
-      - name: Static HTML export with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next export
+          NOTION_FAVORITES_DATABASE_ID: ${{ secrets.NOTION_FAVORITES_DATABASE_ID }
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
