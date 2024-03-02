@@ -11,7 +11,7 @@ export const fontSans = FontSans({
 })
 
 export const metadata: Metadata = {
-  title: "Tim Roty's Personal Site",
+  title: "Tim Roty",
   description: "Personal Site",
 };
 
