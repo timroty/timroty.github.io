@@ -24,7 +24,6 @@ export default async function Post({ params }: any) {
     <>
      <NavigationBar></NavigationBar>
       <main>
-        
       </main>
     </>
   );
