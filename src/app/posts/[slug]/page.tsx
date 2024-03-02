@@ -33,6 +33,6 @@ export async function generateStaticParams() {
   const posts = await getPostsDatabase();
   return posts?.map((page: any) => {
     const slug = page.properties.Slug?.formula?.string;
-    return ({ id: page.id, slug });
-  })
+    return ({ slug: slug });
+  }) ?? [];
 }
