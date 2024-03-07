@@ -31,7 +31,7 @@ export default function FavoriteCard({ title, tags, date, link, author }: Props)
   }
 
   return (
-    <div className="px-4 rounded-md border border-slate-200 dark:border-border bg-secondary max-w-screen-sm">
+    <div className="px-4 rounded-md border border-slate-200 dark:border-border bg-card max-w-screen-sm">
       <a href={link} target="_blank">
         <h2 className="text-md mt-2 mb-1 hover:underline">
           {title}
