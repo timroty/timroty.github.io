@@ -24,28 +24,24 @@ export default function NavigationBar() {
                 className="transition-colors hover:text-foreground/80 text-foreground/60 cursor-pointer"
                 href="/"
               >
-                {" "}
                 Home
               </a>
               <a
                 className="transition-colors hover:text-foreground/80 text-foreground/60 cursor-pointer"
                 href="/about"
               >
-                {" "}
                 About
               </a>
               <a
                 className="transition-colors hover:text-foreground/80 text-foreground/60 cursor-pointer"
                 href="/posts"
               >
-                {" "}
                 Posts
               </a>
               <a
                 className="transition-colors hover:text-foreground/80 text-foreground/60 cursor-pointer"
                 href="/favorites"
               >
-                {" "}
                 Favorites
               </a>
             </nav>

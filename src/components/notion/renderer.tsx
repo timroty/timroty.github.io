@@ -7,33 +7,41 @@ export function renderBlock(block: any) {
   switch (type) {
     case "paragraph":
       return (
-        <p className="text-md mt-2">
+        <p className="text-md my-1">
           <Text value={value.rich_text} />
         </p>
       );
     case "heading_1":
       return (
-        <h1 className="text-4xl font-bold mt-4">
+        <h1 className="text-4xl font-bold my-4">
           <Text value={value.rich_text} />
         </h1>
       );
     case "heading_2":
       return (
-        <h2 className="text-2xl font-bold mt-3">
+        <h2 className="text-2xl font-bold my-3">
           <Text value={value.rich_text} />
         </h2>
       );
     case "heading_3":
       return (
-        <h3 className="text-xl font-bold mt-3">
+        <h3 className="text-xl font-bold my-2">
           <Text value={value.rich_text} />
         </h3>
       );
     case "bulleted_list": {
-      return <ul>{value.children.map((child: any) => renderBlock(child))}</ul>;
+      return (
+        <ul className="list-disc pl-6">
+          {value.children.map((child: any) => renderBlock(child))}
+        </ul>
+      );
     }
     case "numbered_list": {
-      return <ol>{value.children.map((child: any) => renderBlock(child))}</ol>;
+      return (
+        <ol className="list-decimal pl-6">
+          {value.children.map((child: any) => renderBlock(child))}
+        </ol>
+      );
     }
     case "bulleted_list_item":
     case "numbered_list_item":
@@ -52,7 +60,7 @@ export function renderBlock(block: any) {
       return (
         <figure className="flex flex-col justify-center items-center my-4">
           <img src={src} alt={caption} className="max-h-96" />
-          {caption && <figcaption className="">{caption}</figcaption>}
+          {caption && <figcaption className="text-xs">{caption}</figcaption>}
         </figure>
       );
     }
@@ -73,5 +81,6 @@ export function renderNestedList(blocks: any) {
   if (isNumberedList) {
     return <ol>{value.children.map((block: any) => renderBlock(block))}</ol>;
   }
+
   return <ul>{value.children.map((block: any) => renderBlock(block))}</ul>;
 }

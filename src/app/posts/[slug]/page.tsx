@@ -21,7 +21,7 @@ export default async function Post({ params }: any) {
             </>
           ) : (
             <article>
-              <h1 className="text-3xl font-bold  mt-14">
+              <h1 className="text-3xl font-bold  mt-14 mb-4">
                 {(page.properties.Title as any).title[0].plain_text}
               </h1>
               <section>

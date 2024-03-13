@@ -5,28 +5,32 @@ interface Props {
   tags: string[];
   date: Date;
   link: string;
-  author: string;
+  description: string;
 }
 
-export default function FavoriteCard({
+export default function PostCard({
   title,
   tags,
   date,
   link,
-  author,
+  description,
 }: Props) {
   const formatedDate = new Date(date).toLocaleString("en-US", {
+    day: "2-digit",
     month: "short",
     year: "numeric",
   });
 
   return (
     <div className="px-4 rounded-md border border-slate-200 dark:border-border bg-card max-w-screen-sm">
-      <a href={link} target="_blank">
+      <a href={link}>
         <h2 className="text-md mt-2 mb-1 hover:underline">{title}</h2>
       </a>
-      <p className="text-sm text-slate-800 dark:text-slate-300">{author}</p>
-      <p className="text-xs mt-1 text-slate-500">{formatedDate}</p>
+      <p className="text-xs my-1 text-slate-500">{formatedDate}</p>
+      <p className="text-sm text-slate-800 dark:text-slate-300">
+        {description}
+      </p>
+
       <div className="flex flex-row flex-wrap">
         {tags.map((tag, index) => (
           <div
