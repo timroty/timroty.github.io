@@ -1,5 +1,5 @@
-import { Client } from '@notionhq/client';
-import { cache } from 'react';
+import { Client, isFullBlock } from "@notionhq/client";
+import { cache } from "react";
 
 export const revalidate = 86400; // revalidate the data at most once a day
 
@@ -13,23 +13,23 @@ const notion = new Client({
 export const getPostsDatabase = cache(async () => {
   const response = await notion.databases.query({
     database_id: postsDatabaseId,
-    filter:{
-      property: 'Published',
+    filter: {
+      property: "Published",
       checkbox: {
         equals: true
       }
     }
   });
   return response.results;
-}); 
+});
 
 export const getFavoritesDatabase = cache(async () => {
   const response = await notion.databases.query({
     database_id: favoritesDatabaseId,
     sorts: [
       {
-          property: "Date",
-          direction: "descending"
+        property: "Date",
+        direction: "descending"
       }
     ]
   });
@@ -42,7 +42,7 @@ export const getPostFromSlug = cache(async (slug: string) => {
     filter: {
       and: [
         {
-          property: 'Slug',
+          property: "Slug",
           formula: {
             string: {
               equals: slug,
@@ -50,7 +50,7 @@ export const getPostFromSlug = cache(async (slug: string) => {
           }
         },
         {
-          property: 'Published',
+          property: "Published",
           checkbox: {
             equals: true
           }
@@ -58,8 +58,54 @@ export const getPostFromSlug = cache(async (slug: string) => {
       ]
     },
   });
+
   if (response?.results?.length) {
     return response.results[0];
   }
   return null;
+});
+
+export const getBlocks = cache(async (blockId: string) => {
+  if (!blockId)
+    return;
+
+  const blockIdSanatized = blockId.replaceAll("-", "");
+
+  const { results } = await notion.blocks.children.list({
+    block_id: blockIdSanatized,
+    page_size: 100,
+  });
+
+  // Fetches all child blocks recursively
+  const blocksWithChildren: any[] = await Promise.all(results.map(async (block) => {
+    if (isFullBlock(block) && block.has_children) {
+      const children = await getBlocks(block.id);
+      return { ...block, children };
+    }
+    return block;
+  }));
+
+  return blocksWithChildren.reduce((acc, curr, index) => {
+    const addToList = (listType: string, child: any, index: number) => {
+      if (acc.length > 0 && acc[acc.length - 1].type === listType) {
+        acc[acc.length - 1][listType].children?.push(child);
+      } else {
+        acc.push({
+          id: curr.id.substring(0, 8) + "_" + index,
+          type: listType,
+          [listType]: { children: [child] },
+        });
+      }
+    };
+
+    if (curr.type === "bulleted_list_item") {
+      addToList("bulleted_list", curr, index);
+    } else if (curr.type === "numbered_list_item") {
+      addToList("numbered_list", curr, index);
+    } else {
+      acc.push(curr);
+    }
+
+    return acc;
+  }, []);
 });

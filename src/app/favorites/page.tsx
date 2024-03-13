@@ -1,8 +1,8 @@
-import PageHeading from '@/components/page-heading';
-import PageSubheading from '@/components/page-subheading';
-import NavigationBar from '../../components/navigation-bar'
-import { getFavoritesDatabase } from '@/lib/notion';
-import FavoriteCard from '@/components/favorite-card';
+import PageHeading from "@/components/page-heading";
+import PageSubheading from "@/components/page-subheading";
+import NavigationBar from "../../components/navigation-bar";
+import { getFavoritesDatabase } from "@/lib/notion";
+import FavoriteCard from "@/components/favorite-card";
 
 export default async function Favorites() {
   const favorites = await getFavoritesDatabase();
@@ -15,7 +15,7 @@ export default async function Favorites() {
             Favorites
           </PageHeading>
           <PageSubheading>
-            Favorites are pieces of content I've read, watched, or listened to and really enjoyed.
+            Favorites are pieces of content I&#39;ve read, watched, or listened to and really enjoyed.
             Each card has a link to where you can find the favorite as well as the date I consumed it.
             The list is not exhaustive and is always updating!
           </PageSubheading>

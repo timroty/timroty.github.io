@@ -1,5 +1,5 @@
-import PageHeading from '@/components/page-heading';
-import NavigationBar from '../../components/navigation-bar'
+import PageHeading from "@/components/page-heading";
+import NavigationBar from "../../components/navigation-bar";
 
 export default function About() {
   return (

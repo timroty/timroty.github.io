@@ -69,5 +69,5 @@ export default function NavigationBar() {
         </div>
       </header>
     </>
-  )
+  );
 }

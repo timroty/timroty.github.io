@@ -1,6 +1,6 @@
-import { getPostsDatabase } from '@/lib/notion';
-import PageHeading from '@/components/page-heading';
-import NavigationBar from '@/components/navigation-bar';
+import { getPostsDatabase } from "@/lib/notion";
+import PageHeading from "@/components/page-heading";
+import NavigationBar from "@/components/navigation-bar";
 
 export default async function Posts() {
   const posts = await getPostsDatabase();
@@ -17,11 +17,11 @@ export default async function Posts() {
               posts?.length 
               ? posts.map((post: any) => {
                 const date = new Date(post.last_edited_time).toLocaleString(
-                  'en-US',
+                  "en-US",
                   {
-                    month: 'short',
-                    day: '2-digit',
-                    year: 'numeric',
+                    month: "short",
+                    day: "2-digit",
+                    year: "numeric",
                   },
                 );
 
