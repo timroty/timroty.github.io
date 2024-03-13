@@ -16,9 +16,9 @@ export const getPostsDatabase = cache(async () => {
     filter: {
       property: "Published",
       checkbox: {
-        equals: true
-      }
-    }
+        equals: true,
+      },
+    },
   });
   return response.results;
 });
@@ -29,9 +29,9 @@ export const getFavoritesDatabase = cache(async () => {
     sorts: [
       {
         property: "Date",
-        direction: "descending"
-      }
-    ]
+        direction: "descending",
+      },
+    ],
   });
   return response.results;
 });
@@ -46,16 +46,16 @@ export const getPostFromSlug = cache(async (slug: string) => {
           formula: {
             string: {
               equals: slug,
-            }
-          }
+            },
+          },
         },
         {
           property: "Published",
           checkbox: {
-            equals: true
-          }
-        }
-      ]
+            equals: true,
+          },
+        },
+      ],
     },
   });
 
@@ -66,8 +66,7 @@ export const getPostFromSlug = cache(async (slug: string) => {
 });
 
 export const getBlocks = cache(async (blockId: string) => {
-  if (!blockId)
-    return;
+  if (!blockId) return;
 
   const blockIdSanatized = blockId.replaceAll("-", "");
 
@@ -77,13 +76,15 @@ export const getBlocks = cache(async (blockId: string) => {
   });
 
   // Fetches all child blocks recursively
-  const blocksWithChildren: any[] = await Promise.all(results.map(async (block) => {
-    if (isFullBlock(block) && block.has_children) {
-      const children = await getBlocks(block.id);
-      return { ...block, children };
-    }
-    return block;
-  }));
+  const blocksWithChildren: any[] = await Promise.all(
+    results.map(async (block) => {
+      if (isFullBlock(block) && block.has_children) {
+        const children = await getBlocks(block.id);
+        return { ...block, children };
+      }
+      return block;
+    }),
+  );
 
   return blocksWithChildren.reduce((acc, curr, index) => {
     const addToList = (listType: string, child: any, index: number) => {

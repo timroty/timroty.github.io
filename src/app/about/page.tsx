@@ -6,9 +6,7 @@ export default function About() {
     <main className="">
       <NavigationBar></NavigationBar>
       <div className="container  max-w-screen-xl">
-        <PageHeading>
-          About
-        </PageHeading>
+        <PageHeading>About</PageHeading>
       </div>
     </main>
   );

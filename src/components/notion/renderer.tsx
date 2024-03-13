@@ -7,25 +7,25 @@ export function renderBlock(block: any) {
   switch (type) {
     case "paragraph":
       return (
-        <p className='text-md mt-2'>
+        <p className="text-md mt-2">
           <Text value={value.rich_text} />
         </p>
       );
     case "heading_1":
       return (
-        <h1 className='text-4xl font-bold mt-4'>
+        <h1 className="text-4xl font-bold mt-4">
           <Text value={value.rich_text} />
         </h1>
       );
     case "heading_2":
       return (
-        <h2 className='text-2xl font-bold mt-3'>
+        <h2 className="text-2xl font-bold mt-3">
           <Text value={value.rich_text} />
         </h2>
       );
     case "heading_3":
       return (
-        <h3 className='text-xl font-bold mt-3'>
+        <h3 className="text-xl font-bold mt-3">
           <Text value={value.rich_text} />
         </h3>
       );
@@ -46,18 +46,20 @@ export function renderBlock(block: any) {
     case "divider":
       return <hr key={id} />;
     case "image": {
-      const src = value.type === "external" ? value.external.url : value.file.url;
+      const src =
+        value.type === "external" ? value.external.url : value.file.url;
       const caption = value.caption ? value.caption[0]?.plain_text : "";
       return (
-        <figure className='flex flex-col justify-center items-center my-4'>
-          <img src={src} alt={caption} className='max-h-96' />
-          {caption && <figcaption className=''>{caption}</figcaption>}
+        <figure className="flex flex-col justify-center items-center my-4">
+          <img src={src} alt={caption} className="max-h-96" />
+          {caption && <figcaption className="">{caption}</figcaption>}
         </figure>
       );
     }
     default:
-      return `❌ Unsupported block (${type === "unsupported" ? "unsupported by Notion API" : type
-        })`;
+      return `❌ Unsupported block (${
+        type === "unsupported" ? "unsupported by Notion API" : type
+      })`;
   }
 }
 

@@ -11,14 +11,7 @@ export default function Text({ value }: Props) {
 
   return value.map((value: TextRichTextItemResponse) => {
     const {
-      annotations: {
-        bold, 
-        code, 
-        color, 
-        italic,
-        strikethrough, 
-        underline
-      },
+      annotations: { bold, code, color, italic, strikethrough, underline },
       text,
     } = value;
 
@@ -26,11 +19,13 @@ export default function Text({ value }: Props) {
       <span
         className={[
           bold ? "font-bold" : "",
-          code ? "font-mono bg-gray-100 dark:bg-gray-900 px-1 py-0.25 rounded-sm" : "",
+          code
+            ? "font-mono bg-gray-100 dark:bg-gray-900 px-1 py-0.25 rounded-sm"
+            : "",
           italic ? "italic" : "",
           strikethrough ? "line-through" : "",
           underline ? "underline" : "",
-          text.link ?"italic underline" : ""
+          text.link ? "italic underline" : "",
         ].join(" ")}
         style={color !== "default" ? { color } : {}}
         key={text.content}
