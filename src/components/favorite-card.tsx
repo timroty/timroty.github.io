@@ -1,4 +1,4 @@
-import { GetPillColor } from "@/lib/utils";
+import TagPill from "./tag-pill";
 
 interface Props {
   title: string;
@@ -29,12 +29,7 @@ export default function FavoriteCard({
       <p className="text-xs mt-1 text-slate-500">{formatedDate}</p>
       <div className="flex flex-row flex-wrap">
         {tags.map((tag, index) => (
-          <div
-            key={index}
-            className={`rounded-sm border px-1 max-w-fit text-xs mt-3 mb-2 mr-2 ${GetPillColor(tag)}`}
-          >
-            {tag}
-          </div>
+          <TagPill key={index.toString()} text={tag}></TagPill>
         ))}
       </div>
     </div>

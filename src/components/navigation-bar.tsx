@@ -4,6 +4,7 @@ import {
   HamburgerMenuIcon,
   GitHubLogoIcon,
   LinkedInLogoIcon,
+  EnvelopeClosedIcon,
 } from "@radix-ui/react-icons";
 import {
   DropdownMenu,
@@ -81,7 +82,14 @@ export default function NavigationBar() {
               rel="noreferrer"
               href="https://github.com/timroty"
             >
-              <GitHubLogoIcon className="h-[1.1rem] w-[1.1rem] transition-all" />
+              <GitHubLogoIcon className="h-[1.1rem] w-[1.1rem] transition-all mr-1" />
+            </a>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="mailto:timroty13@gmail.com"
+            >
+              <EnvelopeClosedIcon className="h-[1.2rem] w-[1.2rem] transition-all mr-1" />
             </a>
             <a
               target="_blank"

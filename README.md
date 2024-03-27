@@ -18,7 +18,7 @@ The `.env.example` file contains the names of the environment variables that mus
 Create a new file called `.env.local`, copy the environment variables, and set the environment variable value to the appropriate key.
 
 #### Starting the Development Server
-```
+```bash
 npm run dev
 ```
 Once the server is started, it will be avalible at `http://localhost:3000/`.
