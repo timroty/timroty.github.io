@@ -3,9 +3,19 @@ import PageSubheading from "@/components/page-subheading";
 import NavigationBar from "../../components/navigation-bar";
 import { getFavoritesDatabase } from "@/lib/notion";
 import FavoriteCard from "@/components/favorite-card";
+import { useEffect, useState } from "react";
 
 export default async function Favorites() {
-  const favorites = await getFavoritesDatabase();
+  const [favorites, setFavorites] = useState([]);
+
+  useEffect(() => {
+    async function fetchFavorites() {
+      const data: any = await getFavoritesDatabase();
+      setFavorites(data);
+    }
+    fetchFavorites();
+  }, []);
+  
   return (
     <>
       <NavigationBar></NavigationBar>

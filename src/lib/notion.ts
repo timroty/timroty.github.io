@@ -1,7 +1,7 @@
 import { Client, isFullBlock } from "@notionhq/client";
 import { cache } from "react";
 
-export const revalidate = 86400; // revalidate the data at most once a day
+export const revalidate = 720; //86400; // revalidate the data at most once a day
 
 const postsDatabaseId = process.env.NOTION_POSTS_DATABASE_ID ?? "";
 const favoritesDatabaseId = process.env.NOTION_FAVORITES_DATABASE_ID ?? "";
