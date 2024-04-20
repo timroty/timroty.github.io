@@ -1,3 +1,5 @@
+"use client"
+
 import PageHeading from "@/components/page-heading";
 import PageSubheading from "@/components/page-subheading";
 import NavigationBar from "../../components/navigation-bar";
