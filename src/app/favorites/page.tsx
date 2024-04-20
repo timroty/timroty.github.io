@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import PageHeading from "@/components/page-heading";
 import PageSubheading from "@/components/page-subheading";
@@ -11,11 +11,9 @@ export default async function Favorites() {
   const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
-    async function fetchFavorites() {
-      const data: any = await getFavoritesDatabase();
-      setFavorites(data);
-    }
-    fetchFavorites();
+      getFavoritesDatabase().then((result: any) => {
+        setFavorites(result)
+      })
   }, []);
   
   return (
