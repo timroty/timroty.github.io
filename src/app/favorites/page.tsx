@@ -7,13 +7,13 @@ import { getFavoritesDatabase } from "@/lib/notion";
 import FavoriteCard from "@/components/favorite-card";
 import { useEffect, useState } from "react";
 
-export default async function Favorites() {
+export default function Favorites() {
   const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
       getFavoritesDatabase().then((result: any) => {
-        setFavorites(result)
-      })
+        setFavorites(result);
+      });
   }, []);
   
   return (
