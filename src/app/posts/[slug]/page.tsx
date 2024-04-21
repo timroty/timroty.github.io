@@ -41,7 +41,7 @@ export async function generateStaticParams() {
   const posts = await getPostsDatabase();
   return (
     posts?.map((page: any) => {
-      const slug = page.properties.Slug?.formula?.string;
+      const slug = page.properties.Slug?.rich_text[0]?.plain_text;
       return { slug: slug };
     }) ?? []
   );
