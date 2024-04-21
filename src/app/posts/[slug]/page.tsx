@@ -32,7 +32,9 @@ export default async function Post({ params }: any) {
                 </section>
               </article>
               <a href="/posts" className="">
-                <p className="text-sm text-gray-500 my-8 underline">More Posts</p>
+                <p className="text-sm text-gray-500 my-8 underline">
+                  More Posts
+                </p>
               </a>
             </>
           )}

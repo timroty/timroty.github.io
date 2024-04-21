@@ -60,21 +60,27 @@ export function renderBlock(block: any) {
       return (
         <figure className="flex flex-col justify-center items-center my-5">
           <img src={src} alt={caption} className="max-h-96" />
-          {caption && <figcaption className="text-xs mt-2">{caption}</figcaption>}
+          {caption && (
+            <figcaption className="text-xs mt-2">{caption}</figcaption>
+          )}
         </figure>
       );
     }
-    case 'table': {
+    case "table": {
       return (
         <div className="overflow-x-auto">
           <table className="table-auto border">
             <tbody>
               {block.children?.map((child: any, index: any) => {
-                const RowElement = value.has_column_header && index === 0 ? 'th' : 'td';
+                const RowElement =
+                  value.has_column_header && index === 0 ? "th" : "td";
                 return (
                   <tr key={child.id}>
                     {child.table_row?.cells?.map((cell: any, i: number) => (
-                      <RowElement className="border px-3 py-1.5" key={`${cell.plain_text}-${i}`}>
+                      <RowElement
+                        className="border px-3 py-1.5"
+                        key={`${cell.plain_text}-${i}`}
+                      >
                         <Text value={cell} />
                       </RowElement>
                     ))}
