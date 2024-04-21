@@ -7,7 +7,7 @@ export function renderBlock(block: any) {
   switch (type) {
     case "paragraph":
       return (
-        <p className="text-md my-1">
+        <p className="text-md my-3">
           <Text value={value.rich_text} />
         </p>
       );
@@ -19,13 +19,13 @@ export function renderBlock(block: any) {
       );
     case "heading_2":
       return (
-        <h2 className="text-2xl font-bold my-3">
+        <h2 className="text-2xl font-bold my-4">
           <Text value={value.rich_text} />
         </h2>
       );
     case "heading_3":
       return (
-        <h3 className="text-xl font-bold my-2">
+        <h3 className="text-xl font-bold my-3">
           <Text value={value.rich_text} />
         </h3>
       );
@@ -58,10 +58,32 @@ export function renderBlock(block: any) {
         value.type === "external" ? value.external.url : value.file.url;
       const caption = value.caption ? value.caption[0]?.plain_text : "";
       return (
-        <figure className="flex flex-col justify-center items-center my-4">
+        <figure className="flex flex-col justify-center items-center my-5">
           <img src={src} alt={caption} className="max-h-96" />
-          {caption && <figcaption className="text-xs">{caption}</figcaption>}
+          {caption && <figcaption className="text-xs mt-2">{caption}</figcaption>}
         </figure>
+      );
+    }
+    case 'table': {
+      return (
+        <div className="overflow-x-auto">
+          <table className="table-auto border">
+            <tbody>
+              {block.children?.map((child: any, index: any) => {
+                const RowElement = value.has_column_header && index === 0 ? 'th' : 'td';
+                return (
+                  <tr key={child.id}>
+                    {child.table_row?.cells?.map((cell: any, i: number) => (
+                      <RowElement className="border px-3 py-1.5" key={`${cell.plain_text}-${i}`}>
+                        <Text value={cell} />
+                      </RowElement>
+                    ))}
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
       );
     }
     default:

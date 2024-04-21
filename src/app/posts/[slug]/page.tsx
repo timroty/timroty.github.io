@@ -11,7 +11,7 @@ export default async function Post({ params }: any) {
     <>
       <NavigationBar></NavigationBar>
       <main>
-        <div className="container max-w-screen-xl">
+        <div className="container max-w-screen-lg">
           {!page || !isFullPage(page) || !blocks ? (
             <>
               <h2 className="mt-20">No post to display.</h2>
@@ -20,16 +20,21 @@ export default async function Post({ params }: any) {
               </a>
             </>
           ) : (
-            <article>
-              <h1 className="text-3xl font-bold  mt-14 mb-4">
-                {(page.properties.Title as any).title[0].plain_text}
-              </h1>
-              <section>
-                {blocks.map((block: any) => (
-                  <div key={block.id}>{renderBlock(block)}</div>
-                ))}
-              </section>
-            </article>
+            <>
+              <article>
+                <h1 className="text-4xl font-bold  mt-14 mb-6">
+                  {(page.properties.Title as any).title[0].plain_text}
+                </h1>
+                <section>
+                  {blocks.map((block: any) => (
+                    <div key={block.id}>{renderBlock(block)}</div>
+                  ))}
+                </section>
+              </article>
+              <a href="/posts" className="">
+                <p className="text-sm text-gray-500 my-8 underline">More Posts</p>
+              </a>
+            </>
           )}
         </div>
       </main>
