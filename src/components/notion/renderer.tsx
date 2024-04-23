@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Text from "./text";
 
 export function renderBlock(block: any) {
@@ -60,7 +59,7 @@ export function renderBlock(block: any) {
       const caption = value.caption ? value.caption[0]?.plain_text : "";
       return (
         <figure className="flex flex-col justify-center items-center my-5">
-          <Image src={src} alt={caption} className="max-h-96" />
+          <img src={src} alt={caption} className="max-h-96" />
           {caption && (
             <figcaption className="text-xs mt-2">{caption}</figcaption>
           )}
