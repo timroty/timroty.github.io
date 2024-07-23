@@ -23,7 +23,7 @@ export default async function Favorites() {
             {favorites?.length ? (
               favorites.map((favorite: any) => {
                 return (
-                  <div key={favorite.id} className="mt-6 mb-6">
+                  <div key={favorite.id} className="mt-5 mb-5">
                     <FavoriteCard
                       title={favorite.properties.Name.title[0]?.text?.content}
                       tags={favorite.properties.Tags?.multi_select?.map(
