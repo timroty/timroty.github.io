@@ -75,9 +75,37 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            'table': {
+              width: '100%',
+              borderCollapse: 'collapse',
+              marginTop: '1.5em',
+              marginBottom: '1.5em',
+            },
+            'th': {
+              borderBottom: '2px solid hsl(var(--border))',
+              padding: '0.75em',
+              textAlign: 'left',
+              fontWeight: '600',
+            },
+            'td': {
+              borderBottom: '1px solid hsl(var(--border))',
+              padding: '0.75em',
+            },
+            'tr:last-child td': {
+              borderBottom: 'none',
+            },
+          },
+        },
+      },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/typography"),
+  ],
 } satisfies Config;
 
 export default config;

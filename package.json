@@ -19,14 +19,18 @@
     "clsx": "^2.1.0",
     "next": "13.4.19",
     "next-themes": "^0.2.1",
+    "notion-to-md": "^3.1.9",
     "npm": "^10.4.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
     "tailwind-merge": "^2.2.1",
     "tailwindcss": "^3.4.1",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

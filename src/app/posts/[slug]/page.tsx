@@ -1,18 +1,18 @@
 import NavigationBar from "@/components/navigation-bar";
-import { renderBlock } from "@/components/notion/renderer";
-import { getPostsDatabase, getPostFromSlug, getBlocks } from "@/lib/notion";
+import { getPostsDatabase, getPostFromSlug, generateNotionMarkdown } from "@/lib/notion";
 import { isFullPage } from "@notionhq/client";
+import MarkdownRenderer from "@/components/markdown-renderer";
 
 export default async function Post({ params }: any) {
   const page = await getPostFromSlug(params?.slug);
-  const blocks = await getBlocks(page?.id ?? "");
+  const markdown = page?.id ? await generateNotionMarkdown(page.id) : "";
 
   return (
     <>
       <NavigationBar></NavigationBar>
       <main>
         <div className="container max-w-screen-lg">
-          {!page || !isFullPage(page) || !blocks ? (
+          {!page || !isFullPage(page) ? (
             <>
               <h2 className="mt-20">No post to display.</h2>
               <a href="/" className="underline mt-8">
@@ -22,13 +22,11 @@ export default async function Post({ params }: any) {
           ) : (
             <>
               <article>
-                <h1 className="text-4xl font-bold  mt-14 mb-6">
+                <h1 className="text-4xl font-bold mt-14 mb-6">
                   {(page.properties.Title as any).title[0].plain_text}
                 </h1>
                 <section>
-                  {blocks.map((block: any) => (
-                    <div key={block.id}>{renderBlock(block)}</div>
-                  ))}
+                  <MarkdownRenderer content={markdown} />
                 </section>
               </article>
               <a href="/posts" className="">
