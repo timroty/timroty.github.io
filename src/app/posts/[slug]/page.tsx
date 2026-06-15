@@ -1,5 +1,9 @@
 import NavigationBar from "@/components/navigation-bar";
-import { getPostsDatabase, getPostFromSlug, generateNotionMarkdown } from "@/lib/notion";
+import {
+  getPostsDatabase,
+  getPostFromSlug,
+  generateNotionMarkdown,
+} from "@/lib/notion";
 import { isFullPage } from "@notionhq/client";
 import MarkdownRenderer from "@/components/markdown-renderer";
 

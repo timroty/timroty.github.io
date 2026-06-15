@@ -21,7 +21,7 @@ Create a new file called `.env.local`, copy the environment variables, and set t
 ```bash
 npm run dev
 ```
-Once the server is started, it will be avalible at `http://localhost:3000/`.
+Once the server is started, it will be available at `http://localhost:3000/`.
 
 #### Dev Dependencies
 

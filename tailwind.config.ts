@@ -78,34 +78,31 @@ const config = {
       typography: {
         DEFAULT: {
           css: {
-            'table': {
-              width: '100%',
-              borderCollapse: 'collapse',
-              marginTop: '1.5em',
-              marginBottom: '1.5em',
+            table: {
+              width: "100%",
+              borderCollapse: "collapse",
+              marginTop: "1.5em",
+              marginBottom: "1.5em",
             },
-            'th': {
-              borderBottom: '2px solid hsl(var(--border))',
-              padding: '0.75em',
-              textAlign: 'left',
-              fontWeight: '600',
+            th: {
+              borderBottom: "2px solid hsl(var(--border))",
+              padding: "0.75em",
+              textAlign: "left",
+              fontWeight: "600",
             },
-            'td': {
-              borderBottom: '1px solid hsl(var(--border))',
-              padding: '0.75em',
+            td: {
+              borderBottom: "1px solid hsl(var(--border))",
+              padding: "0.75em",
             },
-            'tr:last-child td': {
-              borderBottom: 'none',
+            "tr:last-child td": {
+              borderBottom: "none",
             },
           },
         },
       },
     },
   },
-  plugins: [
-    require("tailwindcss-animate"),
-    require("@tailwindcss/typography"),
-  ],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 } satisfies Config;
 
 export default config;
