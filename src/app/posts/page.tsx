@@ -4,7 +4,7 @@ import PostCard from "@/components/post-card";
 import { getPostSummaries } from "@/lib/notion";
 
 export const metadata: Metadata = {
-  title: "Writing | Tim Roty"
+  title: "Writing | Tim Roty",
 };
 
 export default async function Posts() {

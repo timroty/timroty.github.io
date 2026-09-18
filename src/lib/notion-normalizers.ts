@@ -1,9 +1,7 @@
 export interface PostSummary {
   id: string;
   title: string;
-  description: string | null;
   publishDate: string | null;
-  tags: string[];
   slug: string;
 }
 
@@ -11,8 +9,6 @@ export interface FavoriteSummary {
   id: string;
   title: string;
   author: string | null;
-  consumedDate: string | null;
-  tags: string[];
   url: string;
 }
 
@@ -62,14 +58,6 @@ function getDate(property: UnknownRecord | null): string | null {
   return typeof date?.start === "string" ? date.start : null;
 }
 
-function getTags(property: UnknownRecord | null): string[] {
-  if (!property || !Array.isArray(property.multi_select)) return [];
-
-  return property.multi_select
-    .map((item) => asRecord(item)?.name)
-    .filter((value): value is string => typeof value === "string");
-}
-
 export function normalizePost(value: unknown): PostSummary | null {
   const page = asRecord(value);
   if (!page || typeof page.id !== "string") return null;
@@ -81,9 +69,7 @@ export function normalizePost(value: unknown): PostSummary | null {
   return {
     id: page.id,
     title,
-    description: getPlainText(getProperty(page, "Description")),
     publishDate: getDate(getProperty(page, "PublishDate")),
-    tags: getTags(getProperty(page, "Tags")),
     slug,
   };
 }
@@ -100,8 +86,6 @@ export function normalizeFavorite(value: unknown): FavoriteSummary | null {
     id: page.id,
     title,
     author: getPlainText(getProperty(page, "Author")),
-    consumedDate: getDate(getProperty(page, "Date")),
-    tags: getTags(getProperty(page, "Tags")),
     url,
   };
 }

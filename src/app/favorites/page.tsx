@@ -4,7 +4,7 @@ import NavigationBar from "@/components/navigation-bar";
 import { getFavoriteSummaries } from "@/lib/notion";
 
 export const metadata: Metadata = {
-  title: "Favorites | Tim Roty"
+  title: "Favorites | Tim Roty",
 };
 
 export default async function Favorites() {

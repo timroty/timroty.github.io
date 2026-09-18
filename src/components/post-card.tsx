@@ -2,10 +2,8 @@ import Link from "next/link";
 
 interface Props {
   title: string;
-  tags: string[];
   publishDate: string | null;
   slug: string;
-  description: string | null;
 }
 
 function formatDate(value: string | null): string | null {
@@ -19,11 +17,7 @@ function formatDate(value: string | null): string | null {
   }).format(new Date(`${value}T00:00:00Z`));
 }
 
-export default function PostCard({
-  title,
-  publishDate,
-  slug,
-}: Props) {
+export default function PostCard({ title, publishDate, slug }: Props) {
   const formattedDate = formatDate(publishDate);
 
   return (
