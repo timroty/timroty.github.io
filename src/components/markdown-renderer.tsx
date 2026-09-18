@@ -9,7 +9,7 @@ interface Props {
 
 export default function MarkdownRenderer({ content }: Props) {
   return (
-    <div className="prose dark:prose-invert max-w-none">
+    <div className="prose max-w-none prose-p:leading-8 prose-li:leading-8 prose-img:rounded-none">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
