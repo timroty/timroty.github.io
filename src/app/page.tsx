@@ -1,15 +1,11 @@
 import Link from "next/link";
-import FavoriteCard from "@/components/favorite-card";
 import NavigationBar from "@/components/navigation-bar";
 import PostCard from "@/components/post-card";
 import SiteFooter from "@/components/site-footer";
-import { getFavoriteSummaries, getPostSummaries } from "@/lib/notion";
+import { getPostSummaries } from "@/lib/notion";
 
 export default async function Home() {
-  const [posts, favorites] = await Promise.all([
-    getPostSummaries(),
-    getFavoriteSummaries(),
-  ]);
+  const posts = await getPostSummaries();
 
   return (
     <>
@@ -41,33 +37,6 @@ export default async function Home() {
               ) : (
                 <p className="border-t border-border py-6 text-muted-foreground">
                   More writing is on the way.
-                </p>
-              )}
-            </div>
-          </div>
-        </section>
-
-        <section id="favorites" className="site-section">
-          <div className="site-shell section-spacing">
-            <div className="flex flex-wrap items-end justify-between gap-4">
-              <h2 className="section-heading">Favorites</h2>
-              <Link
-                className="editorial-link text-sm font-semibold"
-                href="/favorites"
-              >
-                View all favorites
-              </Link>
-            </div>
-            <div className="mt-6 border-b border-border">
-              {favorites.length > 0 ? (
-                favorites
-                  .slice(0, 4)
-                  .map((favorite) => (
-                    <FavoriteCard key={favorite.id} {...favorite} />
-                  ))
-              ) : (
-                <p className="border-t border-border py-6 text-muted-foreground">
-                  More favorites are on the way.
                 </p>
               )}
             </div>

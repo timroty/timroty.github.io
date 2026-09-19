@@ -1,15 +1,9 @@
 import { Client } from "@notionhq/client";
 import { NotionToMarkdown } from "notion-to-md";
 import { cache } from "react";
-import {
-  normalizeFavorite,
-  normalizePost,
-  type FavoriteSummary,
-  type PostSummary,
-} from "./notion-normalizers";
+import { normalizePost, type PostSummary } from "./notion-normalizers";
 
 const postsDatabaseId = process.env.NOTION_POSTS_DATABASE_ID ?? "";
-const favoritesDatabaseId = process.env.NOTION_FAVORITES_DATABASE_ID ?? "";
 
 const notion = new Client({
   auth: process.env.NOTION_TOKEN,
@@ -34,34 +28,12 @@ const getPostsDatabase = cache(async () => {
   return response.results;
 });
 
-const getFavoritesDatabase = cache(async () => {
-  const response = await notion.databases.query({
-    database_id: favoritesDatabaseId,
-    sorts: [
-      {
-        property: "Date",
-        direction: "descending",
-      },
-    ],
-  });
-  return response.results;
-});
-
 export const getPostSummaries = cache(async (): Promise<PostSummary[]> => {
   const pages = await getPostsDatabase();
   return pages
     .map(normalizePost)
     .filter((post): post is PostSummary => post !== null);
 });
-
-export const getFavoriteSummaries = cache(
-  async (): Promise<FavoriteSummary[]> => {
-    const pages = await getFavoritesDatabase();
-    return pages
-      .map(normalizeFavorite)
-      .filter((favorite): favorite is FavoriteSummary => favorite !== null);
-  },
-);
 
 export const getPostFromSlug = cache(async (slug: string) => {
   const response = await notion.databases.query({

@@ -5,13 +5,6 @@ export interface PostSummary {
   slug: string;
 }
 
-export interface FavoriteSummary {
-  id: string;
-  title: string;
-  author: string | null;
-  url: string;
-}
-
 type UnknownRecord = Record<string, unknown>;
 
 function asRecord(value: unknown): UnknownRecord | null {
@@ -71,21 +64,5 @@ export function normalizePost(value: unknown): PostSummary | null {
     title,
     publishDate: getDate(getProperty(page, "PublishDate")),
     slug,
-  };
-}
-
-export function normalizeFavorite(value: unknown): FavoriteSummary | null {
-  const page = asRecord(value);
-  if (!page || typeof page.id !== "string") return null;
-
-  const title = getPlainText(getProperty(page, "Name"));
-  const url = getPlainText(getProperty(page, "Link"));
-  if (!title || !url) return null;
-
-  return {
-    id: page.id,
-    title,
-    author: getPlainText(getProperty(page, "Author")),
-    url,
   };
 }
