@@ -9,9 +9,19 @@ Personal website build with Next.js, the Notion Api, and TypeScript.
 git clone https://github.com/timroty/timroty.github.io
 cd timroty.github.io
 ```
-#### Install NPM Packages
+#### Use the Project Toolchain
+
+Install and activate the Node.js version pinned in `.nvmrc`:
+
 ```bash
-npm install
+nvm install
+nvm use
+```
+
+#### Install npm Packages
+
+```bash
+npm ci
 ```
 #### Setting Secrets
 The `.env.example` file contains the names of the environment variables that must be set in order to run the project.

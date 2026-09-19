@@ -9,11 +9,12 @@ import {
 import { normalizePost } from "@/lib/notion-normalizers";
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export default async function Post({ params }: Props) {
-  const page = await getPostFromSlug(params.slug);
+  const { slug } = await params;
+  const page = await getPostFromSlug(slug);
   const post = normalizePost(page);
   const markdown = page?.id ? await generateNotionMarkdown(page.id) : "";
 

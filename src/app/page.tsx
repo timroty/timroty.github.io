@@ -13,9 +13,7 @@ export default async function Home() {
       <main>
         <section className="site-shell py-8 sm:py-10">
           <p className="text-sm italic text-link">Hi, I&apos;m Tim.</p>
-          <h1 className="mt-1 text-lg leading-7">
-            Here are my thoughts...
-          </h1>
+          <h1 className="mt-1 text-lg leading-7">Here are my thoughts...</h1>
         </section>
 
         <section id="writing" className="site-section">
