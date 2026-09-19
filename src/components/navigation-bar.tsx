@@ -1,107 +1,37 @@
+import Link from "next/link";
 import ThemeToggle from "./theme-toggle";
-import { Button } from "@/components/ui/button";
-import {
-  HamburgerMenuIcon,
-  GitHubLogoIcon,
-  LinkedInLogoIcon,
-  EnvelopeClosedIcon,
-} from "@radix-ui/react-icons";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-  DropdownMenuSeparator,
-} from "@/components/ui/dropdown-menu";
+
+const navigation = [{ label: "Writing", href: "/#writing" }];
 
 export default function NavigationBar() {
   return (
-    <>
-      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-12 max-w-screen-2xl items-center px-8">
-          <div className="mr-4 hidden sm:flex">
-            <nav className="flex items-center gap-6 text-sm">
-              <a
-                className="transition-colors hover:text-foreground/80 text-foreground/60 cursor-pointer"
-                href="/"
-              >
-                Home
-              </a>
-              <a
-                className="transition-colors hover:text-foreground/80 text-foreground/60 cursor-pointer"
-                href="/about"
-              >
-                About
-              </a>
-              <a
-                className="transition-colors hover:text-foreground/80 text-foreground/60 cursor-pointer"
-                href="/posts"
-              >
-                Posts
-              </a>
-              <a
-                className="transition-colors hover:text-foreground/80 text-foreground/60 cursor-pointer"
-                href="/favorites"
-              >
-                Favorites
-              </a>
-            </nav>
-          </div>
-          <div className="flex mr-4 w-screen-2xl sm:hidden">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <HamburgerMenuIcon className="h-[1.1rem] w-[1.1rem] transition-all" />
-                  <span className="sr-only">Pages Menu</span>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-60 ml-6">
-                <a href="/">
-                  <DropdownMenuItem className="h-10">Home</DropdownMenuItem>
-                </a>
-                <DropdownMenuSeparator />
-                <a href="/about">
-                  <DropdownMenuItem className="h-10">About</DropdownMenuItem>
-                </a>
-                <DropdownMenuSeparator />
-                <a href="/posts">
-                  <DropdownMenuItem className="h-10">Posts</DropdownMenuItem>
-                </a>
-                <DropdownMenuSeparator />
-                <a href="/favorites">
-                  <DropdownMenuItem className="h-10">
-                    Favorites
-                  </DropdownMenuItem>
-                </a>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
-          <div className="flex flex-1 items-center justify-end space-x-2">
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://github.com/timroty"
-            >
-              <GitHubLogoIcon className="h-[1.1rem] w-[1.1rem] transition-all mr-1" />
-            </a>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="mailto:timroty13@gmail.com"
-            >
-              <EnvelopeClosedIcon className="h-[1.2rem] w-[1.2rem] transition-all mr-1" />
-            </a>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://www.linkedin.com/in/timroty"
-            >
-              <LinkedInLogoIcon className="h-[1.2rem] w-[1.2rem] transition-all mr-4" />
-            </a>
-            <ThemeToggle></ThemeToggle>
-          </div>
+    <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/90">
+      <div className="site-shell flex flex-col gap-2 py-3 sm:flex-row sm:items-center sm:justify-between">
+        <Link
+          href="/"
+          className="group w-fit leading-tight"
+          aria-label="Tim Roty, home"
+        >
+          <span className="block text-base font-bold tracking-tight group-hover:text-link">
+            Tim Roty
+          </span>
+        </Link>
+
+        <div className="flex items-center justify-between gap-3 sm:justify-end sm:gap-5">
+          <nav aria-label="Primary navigation">
+            <ul className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm sm:gap-x-5">
+              {navigation.map((item) => (
+                <li key={item.href}>
+                  <Link className="nav-link" href={item.href}>
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <ThemeToggle />
         </div>
-      </header>
-    </>
+      </div>
+    </header>
   );
 }

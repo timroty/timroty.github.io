@@ -1,41 +1,42 @@
-import TagPill from "./tag-pill";
+import Link from "next/link";
 
 interface Props {
   title: string;
-  tags: string[];
-  date: Date;
-  link: string;
-  description: string;
+  publishDate: string | null;
+  slug: string;
 }
 
-export default function PostCard({
-  title,
-  tags,
-  date,
-  link,
-  description,
-}: Props) {
-  const formatedDate = new Date(date).toLocaleString("en-US", {
+function formatDate(value: string | null): string | null {
+  if (!value) return null;
+
+  return new Intl.DateTimeFormat("en-US", {
     day: "2-digit",
     month: "short",
     year: "numeric",
-  });
+    timeZone: "UTC",
+  }).format(new Date(`${value}T00:00:00Z`));
+}
+
+export default function PostCard({ title, publishDate, slug }: Props) {
+  const formattedDate = formatDate(publishDate);
 
   return (
-    <div className="px-4 rounded-md border border-slate-200 dark:border-border bg-card max-w-screen-sm">
-      <a href={link}>
-        <h2 className="text-md mt-2 mb-1 hover:underline">{title}</h2>
-      </a>
-      <p className="text-xs my-1 text-slate-500">{formatedDate}</p>
-      <p className="text-sm text-slate-800 dark:text-slate-300">
-        {description}
-      </p>
-
-      <div className="flex flex-row flex-wrap">
-        {tags.map((tag, index) => (
-          <TagPill key={index.toString()} text={tag}></TagPill>
-        ))}
+    <article className="border-t border-border py-4 sm:grid sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-6">
+      <div className="min-w-0">
+        <h3 className="text-xl font-semibold tracking-tight">
+          <Link className="editorial-link" href={`/posts/${slug}`}>
+            {title}
+          </Link>
+        </h3>
       </div>
-    </div>
+      {formattedDate ? (
+        <time
+          className="mt-3 block whitespace-nowrap text-sm text-muted-foreground sm:mt-1"
+          dateTime={publishDate ?? undefined}
+        >
+          {formattedDate}
+        </time>
+      ) : null}
+    </article>
   );
 }

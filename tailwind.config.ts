@@ -3,81 +3,63 @@ import { fontFamily } from "tailwindcss/defaultTheme";
 
 const config = {
   darkMode: ["class"],
-  content: [
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
-  ],
+  content: ["./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
+        border: "rgb(var(--border) / <alpha-value>)",
+        ring: "rgb(var(--ring) / <alpha-value>)",
+        background: "rgb(var(--background) / <alpha-value>)",
+        foreground: "rgb(var(--foreground) / <alpha-value>)",
+        link: "rgb(var(--link) / <alpha-value>)",
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: "rgb(var(--muted) / <alpha-value>)",
+          foreground: "rgb(var(--muted-foreground) / <alpha-value>)",
         },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
+        accent: "rgb(var(--accent) / <alpha-value>)",
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
       borderRadius: {
-        lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
-      },
-      keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
-        },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
       },
       typography: {
         DEFAULT: {
           css: {
+            color: "rgb(var(--foreground))",
+            maxWidth: "none",
+            "h1, h2, h3, h4": {
+              color: "rgb(var(--foreground))",
+              letterSpacing: "-0.025em",
+            },
+            strong: {
+              color: "rgb(var(--foreground))",
+            },
+            a: {
+              color: "rgb(var(--link))",
+              textDecorationColor: "rgb(var(--link) / 0.45)",
+              textUnderlineOffset: "0.2em",
+            },
+            code: {
+              color: "rgb(var(--foreground))",
+            },
+            blockquote: {
+              color: "rgb(var(--foreground))",
+              borderLeftColor: "rgb(var(--border))",
+            },
+            hr: {
+              borderColor: "rgb(var(--border))",
+            },
+            "ol > li::marker, ul > li::marker": {
+              color: "rgb(var(--muted-foreground))",
+            },
+            pre: {
+              color: "rgb(var(--foreground))",
+              backgroundColor: "rgb(var(--muted))",
+            },
             table: {
               width: "100%",
               borderCollapse: "collapse",
@@ -85,13 +67,13 @@ const config = {
               marginBottom: "1.5em",
             },
             th: {
-              borderBottom: "2px solid hsl(var(--border))",
+              borderBottom: "2px solid rgb(var(--border))",
               padding: "0.75em",
               textAlign: "left",
               fontWeight: "600",
             },
             td: {
-              borderBottom: "1px solid hsl(var(--border))",
+              borderBottom: "1px solid rgb(var(--border))",
               padding: "0.75em",
             },
             "tr:last-child td": {
@@ -102,7 +84,7 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography")],
 } satisfies Config;
 
 export default config;

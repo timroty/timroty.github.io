@@ -1,17 +1,15 @@
 import { Client } from "@notionhq/client";
 import { NotionToMarkdown } from "notion-to-md";
 import { cache } from "react";
-
-export const revalidate = 86400; // revalidate the data at most once a day
+import { normalizePost, type PostSummary } from "./notion-normalizers";
 
 const postsDatabaseId = process.env.NOTION_POSTS_DATABASE_ID ?? "";
-const favoritesDatabaseId = process.env.NOTION_FAVORITES_DATABASE_ID ?? "";
 
 const notion = new Client({
   auth: process.env.NOTION_TOKEN,
 });
 
-export const getPostsDatabase = cache(async () => {
+const getPostsDatabase = cache(async () => {
   const response = await notion.databases.query({
     database_id: postsDatabaseId,
     filter: {
@@ -20,21 +18,21 @@ export const getPostsDatabase = cache(async () => {
         equals: true,
       },
     },
-  });
-  return response.results;
-});
-
-export const getFavoritesDatabase = cache(async () => {
-  const response = await notion.databases.query({
-    database_id: favoritesDatabaseId,
     sorts: [
       {
-        property: "Date",
+        property: "PublishDate",
         direction: "descending",
       },
     ],
   });
   return response.results;
+});
+
+export const getPostSummaries = cache(async (): Promise<PostSummary[]> => {
+  const pages = await getPostsDatabase();
+  return pages
+    .map(normalizePost)
+    .filter((post): post is PostSummary => post !== null);
 });
 
 export const getPostFromSlug = cache(async (slug: string) => {
