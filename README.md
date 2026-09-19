@@ -18,13 +18,6 @@ nvm install
 nvm use
 ```
 
-The project expects Node.js 24.21.0 and npm 11.19.0. Confirm the active npm
-version before installing dependencies:
-
-```bash
-npm --version
-```
-
 #### Install npm Packages
 
 ```bash
