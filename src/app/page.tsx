@@ -34,7 +34,7 @@ export default async function Home() {
                   .map((post) => <PostCard key={post.id} {...post} />)
               ) : (
                 <p className="border-t border-border py-6 text-muted-foreground">
-                  More writing is on the way.
+                  No posts available.
                 </p>
               )}
             </div>

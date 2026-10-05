@@ -1,7 +1,7 @@
 import Link from "next/link";
 import ThemeToggle from "./theme-toggle";
 
-const navigation = [{ label: "Writing", href: "/#writing" }];
+const navigation = [{ label: "Writing", href: "/#writing" }, { label: "Contact", href: "/#contact" }];
 
 export default function NavigationBar() {
   return (
