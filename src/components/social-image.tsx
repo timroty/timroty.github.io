@@ -51,6 +51,9 @@ export default function SocialImage({ model }: Props) {
           fontWeight: 800,
           letterSpacing: "-0.035em",
           lineHeight: 1.08,
+          maxHeight: 330,
+          overflow: "hidden",
+          wordBreak: "break-all",
         }}
       >
         {model.title}
