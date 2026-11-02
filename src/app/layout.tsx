@@ -5,6 +5,7 @@ import "./globals.css";
 import ThemeProvider from "./providers/theme-provider";
 
 import { cn } from "../lib/utils";
+import { SITE_DESCRIPTION, SITE_URL } from "../lib/post-metadata";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -13,6 +14,8 @@ const fontSans = FontSans({
 
 export const metadata: Metadata = {
   title: "Tim Roty",
+  description: SITE_DESCRIPTION,
+  metadataBase: new URL(SITE_URL),
 };
 
 export default function RootLayout({

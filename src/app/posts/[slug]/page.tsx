@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import NavigationBar from "@/components/navigation-bar";
 import MarkdownRenderer from "@/components/markdown-renderer";
 import {
@@ -7,9 +8,17 @@ import {
   getPostSummaries,
 } from "@/lib/notion";
 import { normalizePost } from "@/lib/notion-normalizers";
+import { createPostMetadata } from "@/lib/post-metadata";
 
 interface Props {
   params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const page = await getPostFromSlug(slug);
+
+  return createPostMetadata(normalizePost(page), slug);
 }
 
 export default async function Post({ params }: Props) {
