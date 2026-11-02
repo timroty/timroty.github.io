@@ -3,8 +3,7 @@ import type { PostSummary } from "./notion-normalizers";
 
 export const SITE_NAME = "Tim Roty";
 export const SITE_URL = "https://timroty.github.io";
-export const SITE_DESCRIPTION =
-  "Writing from Tim Roty, a Senior Software Engineer at Hudl.";
+export const SITE_DESCRIPTION = "Writing from Tim Roty";
 
 export function createPostMetadata(
   post: PostSummary | null,
